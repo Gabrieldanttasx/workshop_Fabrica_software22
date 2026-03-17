@@ -31,6 +31,10 @@ class Calculadora:
             print("\n=== HISTÓRICO ===")
             for operacao in self.historico:
                 print(operacao)
+    #limpar historico
+    def limpar_historico(self):
+        self.historico.clear()
+        print("Histórico apagado com sucesso!")
 
 
 calc = Calculadora()
@@ -42,16 +46,20 @@ while True:
     print("3. Multiplicação")
     print("4. Divisão")
     print("5. Ver histórico")
-    print("6. Sair")
+    print("6. Limpar histórico")
+    print("7. Sair")
 
     opcao = input("Escolha uma opção: ")
 
-    if opcao == "6":
+    if opcao == "7":
         print("Saindo da calculadora...")
         break
 
     elif opcao == "5":
         calc.mostrar_historico()
+
+    elif opcao == "6":
+        calc.limpar_historico()
 
     elif opcao in ["1", "2", "3", "4"]:
         try:
